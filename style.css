@@ -1,0 +1,503 @@
+/* ==========================================================================
+   1. Import Fonts
+   ========================================================================== */
+   @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+
+
+   /* ==========================================================================
+      2. Base Styles
+      ========================================================================== */
+   #main-body {
+     font-family: Arial, sans-serif;
+     line-height: 1.6;
+     margin: 0;
+     padding: 0;
+     background-color: black;
+     color: white;
+   }
+   
+   #main-shows {
+     margin-top: 60px;
+     background: linear-gradient(to bottom, black 0%, black 0.10%, #826af9 10%, #90b8cd 100%);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     font-family: 'Londrina Solid', sans-serif;
+   }
+   
+   
+   /* ==========================================================================
+      3. Navbar Styles
+      ========================================================================== */
+   .navbar {
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+     /* margin-bottom: 10px; */
+     position: fixed;
+     background-color: rgba(0, 0, 0, 0.3) !important;
+   }
+   
+   .navbar-nav .nav-item {
+     margin: 0 20px;
+   }
+   
+   .navbar-light .navbar-nav .nav-link {
+     color: #90b8cd;
+     font-family: 'Londrina Solid', sans-serif;
+     font-size: 25px;
+   }
+   
+   .navbar-light .navbar-nav .nav-link:hover {
+     color: #af34e3;
+   }
+   
+   .navbar-light .navbar-toggler-icon {
+     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2390b8cd' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+   }
+   
+   .navbar-collapse {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+   
+   .social-links {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 10px;
+     gap: 20px; /* Adds space between items */
+   }
+   
+   .social-links a {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     color: inherit;
+   }
+   
+   
+   /* ==========================================================================
+      4. Header & Logo Styles
+      ========================================================================== */
+   .header {
+     position: relative;
+     background-image: url('images/BushBackground.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     height: 60vw;
+   }
+   
+   #icons {
+     position: absolute;
+     bottom: 10px; /* Adjust as needed */
+     left: 0;
+     right: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 60px; /* Adds space between icons */
+   }
+   
+   #icons a {
+     color: inherit;
+     text-decoration: none;
+   }
+   
+   a {
+     color: inherit;
+     text-decoration: none;
+   }
+   
+   #icons svg,
+   #icons img {
+     width: 40px;
+     height: 40px;
+   }
+   
+   .Bush-logo {
+     height: 90px;
+     width: auto;
+     position: relative;
+     left: 20px;
+   }
+   
+   
+   /* ==========================================================================
+      5. Section Styles
+      ========================================================================== */
+   main h2 {
+     color: #90b8cd;
+     font-family: 'Londrina Solid', sans-serif;
+     font-size: 10vw;
+     margin-bottom: 40px;
+   }
+   
+   .section {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     padding: 20px;
+     margin: 20px auto;
+     width: 90%;
+     max-width: 1200px;
+     border-radius: 10px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     background-color: rgba(0, 0, 0, 0.1);
+   }
+   
+   #description {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+   }
+   
+   .section p {
+     font-size: 20px; /* Adjust as needed */
+   }
+   
+   
+   /* ==========================================================================
+      6. Footer Styles
+      ========================================================================== */
+   footer {
+    text-align: center;
+    padding: 10px 0;
+    background: linear-gradient(to bottom, #90b8cd 1%, #826af9 20%);
+    color: #fff;
+    width: 100vw;
+    bottom: 0;
+    display: flex;
+    align-items: flex-start;  /* Align items at the top */
+    justify-content: space-evenly;
+    padding-top: 100px;
+   }
+
+   footer,
+footer * {
+  font-family: 'Londrina Solid', sans-serif !important;
+}
+   
+   .contact-left-foot,
+   .contact-right-foot {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+   
+   .contact-left-foot {
+     gap: 10px;
+   }
+   
+   .contact-right-foot {
+     gap: 20px;
+   }
+   
+   .contact-inputs {
+     width: 250px;
+     height: 35px;
+     border: none;
+     outline: none;
+     padding-left: 25px;
+     font-weight: 500;
+     border-radius: 50px;
+   }
+   
+   .contact-right-foot button {
+     display: flex;
+     align-items: center;
+     padding: 15px 30px;
+     font-size: 16px;
+     color: #fff;
+     border: none;
+     border-radius: 50px;
+     background: linear-gradient(270deg, #a363aa, #af35e3);
+     cursor: pointer;
+   }
+   
+   .contact-right-title h2 {
+     font-weight: 600;
+     color: #fff;
+     font-size: 40px;
+     margin-bottom: 5px;
+   }
+   
+   .contact-right-title hr {
+     border: none;
+     width: 120px;
+     height: 5px;
+     background: #fff;
+     border-radius: 20px;
+     margin-bottom: 20px;
+   }
+
+   /* Make labels appear above inputs */
+.mc-field-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* Ensures the text is left aligned */
+  margin-bottom: 15px;
+}
+
+/* Style all input boxes */
+.mc-field-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Container for first name and last name fields in a row */
+.name-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;  /* Even spacing between the fields */
+  margin-bottom: 15px;
+}
+
+/* Smaller input boxes for first and last name */
+.name-row .mc-field-group input {
+  width: 200px;  /* Adjust width as needed */
+}
+
+/* Optional: You can style the email field separately if desired */
+.mc-field-group input[type="email"] {
+  width: 100%;  /* or a fixed width if you prefer */
+}
+
+#mc-embedded-subscribe {
+  display: center;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(270deg, #a363aa, #af35e3);
+  cursor: pointer;
+}
+
+#mc_embed_signup h2 {
+  display: flex;
+  /* Adjust alignment if necessary. For example, to align items to the left: */
+  justify-content: flex-start;
+  padding-bottom: 30px;
+}
+
+
+   
+   
+   /* ==========================================================================
+      7. Media Queries
+      ========================================================================== */
+   
+   /* Large Desktops: 1680px and above */
+   @media only screen and (min-width: 1680px) {
+     .section {
+       width: 80%;
+     }
+     .navbar-nav .nav-item {
+       margin: 0 30px;
+     }
+     .Bush-logo {
+       height: 100px;
+     }
+   }
+   
+   /* Medium Devices (Collapsed Navbar): up to 992px */
+   @media (max-width: 992px) {
+
+     .navbar {
+       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+       position: fixed;
+       background-color: rgba(0, 0, 0, 0.1) !important;
+     }
+   
+     .navbar-collapse {
+       background-color: rgba(0, 0, 0, 0.65);
+       max-height: 80vh;
+       overflow-y: auto;
+     }
+   
+     .navbar-nav {
+       width: 100%;
+       flex-direction: column;
+       align-items: center;
+     }
+   
+     .navbar-nav .nav-item {
+       margin: 5px 0;
+     }
+   
+     .navbar-nav .nav-item .nav-link {
+       background-color: rgba(0, 0, 0, 0.65);
+       border-radius: 5px;
+       padding: 10px 20px;
+       font-size: 15px;
+     }
+   }
+   
+   /* Small Devices: up to 768px */
+   @media (max-width: 768px) {
+     footer {
+       flex-direction: column;
+       align-items: center;
+     }
+     .contact-left-foot,
+     .contact-right-foot {
+       width: 100%;
+       margin-bottom: 20px; /* Spacing between stacked items */
+     }
+
+     #mc_embed_signup h2 {
+      display: flex;
+      justify-content: center;  /* Centers the content horizontally */
+      text-align: center;       /* Centers text if it wraps */
+      max-width: 768px;         /* Optional: limits the width */
+      margin: 0 auto;           /* Centers the h2 container itself */
+    }
+   }
+   
+   /* Smartphones: up to 480px */
+   @media only screen and (max-width: 480px) {
+     .header {
+       height: 100vh;
+       background-repeat: repeat-x;
+       animation: panBackground 30s linear infinite;
+     }
+   
+     @keyframes panBackground {
+       from {
+         background-position: 0 0;
+       }
+       to {
+         background-position: 100% 0;
+       }
+     }
+   
+     .section {
+       width: 100%;
+       margin: 5px;
+       padding: 10px;
+     }
+   
+     main {
+       margin-top: 60px;
+     }
+   
+     main h2 {
+       font-size: 20vw;
+       display: flex;
+       justify-content: center;
+       flex-wrap: wrap;
+       text-align: center;
+     }
+   
+     .Bush-logo {
+       height: 80px;
+       left: 10px;
+     }
+   
+     .navbar-nav .nav-item .nav-link {
+       background-color: rgba(0, 0, 0, 0.8);
+       border-radius: 5px;
+       padding: 8px 15px;
+       font-size: 25px;
+     }
+   
+     #icons svg,
+     #icons img {
+       width: 20px;
+       height: 20px;
+     }
+   
+     #icons {
+       gap: 20px;
+       bottom: 10px;
+     }
+
+  /* Keep the name row in a row layout */
+  #mc_embed_signup_scroll .name-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 90%;          /* The container takes 90% of the available width */
+    margin: 0 auto;      /* Center the row container */
+  }
+  
+  /* Each field group within the name row takes equal space */
+  #mc_embed_signup_scroll .name-row .mc-field-group {
+    flex: 1;
+  }
+  
+  /* Style all inputs inside the name row so they fill their container */
+  #mc_embed_signup_scroll .name-row .mc-field-group input {
+    width: 100%;          /* Full width of the parent field group */
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* Style the email input to take 90% of its container's width */
+  #mc_embed_signup_scroll .mc-field-group input[type="email"] {
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+  }
+   }
+   
+   /* Tablets: min-width 768px */
+   @media (min-width: 768px) {
+     .section {
+       flex-direction: row;
+       align-items: center;
+       justify-content: space-between;
+       text-align: left;
+     }
+   
+     /* Left column: Date and What text */
+     .section .event-details {
+       text-align: left;
+       margin-bottom: 0;
+       flex: 1;
+     }
+   
+     /* Center column: Where text */
+     .section #where {
+       text-align: center;
+       margin-bottom: 0;
+       flex: 1;
+     }
+   
+     /* Right column: Button */
+     .section button {
+       margin: 0 50px 0 300px;
+       text-align: center;
+     }
+
+     #mc_embed_signup h2 {
+      display: center;
+    }
+       
+   }
+   
+   /* Very Small Smartphones: up to 320px */
+   @media only screen and (max-width: 320px) {
+     .header {
+       height: 50vh;
+     }
+     .section {
+       padding: 8px;
+     }
+     .navbar-nav .nav-item .nav-link {
+       padding: 8px 15px;
+       font-size: 25px;
+     }
+   }
+   

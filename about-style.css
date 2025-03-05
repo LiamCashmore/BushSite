@@ -1,0 +1,260 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+   body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #7a70fb;
+    /* background: linear-gradient(to bottom, #af34e3, #90b8cd); */
+    color: white;
+  }
+  
+  /* ==========================================================================
+     Main Layout
+     ========================================================================== */
+  main {
+    margin-top: 150px;
+    width: 100vw;
+    background: linear-gradient(to bottom, #7a70fb 2%, #90b8cd 20%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Londrina Solid', sans-serif;
+  }
+  
+  /* ==========================================================================
+     Gallery Classes
+     ========================================================================== */
+  .big-gallery {
+    display: block;
+  }
+  
+  .small-gallery {
+    display: none;
+  }
+  
+  /* ==========================================================================
+     Bio Section
+     ========================================================================== */
+  #bio-container {
+    overflow: auto; /* Clear the float */
+  }
+  
+  .bio-photo {
+    float: left;
+    width: 40%;       /* Adjust as needed */
+    margin: 0 20px;   /* Combines left and right margins */
+    border-radius: 15%;
+    border: 10px solid #af34e3;
+  }
+  
+  #bio-title {
+    font-size: 60px;
+  }
+  
+  #bio-p {
+    font-size: 30px;
+    padding: 0 30px 50px;
+    margin-bottom: 20px;
+  }
+  
+  #collage {
+    width: 92vw;
+  }
+  
+  /* ==========================================================================
+     Live Container
+     ========================================================================== */
+  .live-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 90%;
+  }
+  
+  /* ==========================================================================
+     Contact Section
+     ========================================================================== */
+  .contact-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Use flex-start for alignment */
+    gap: 20px;
+  }
+  
+  .contact-left-title h2 {
+    font-weight: 600;
+    color: #a363aa;
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+  
+  .contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background: #a363aa;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-right-title h2 {
+    font-weight: 600;
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+  
+  .contact-right-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background: #fff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    border-radius: 50px;
+  }
+  
+  .contact-inputs:focus {
+    border: 2px solid #a363aa;
+  }
+  
+  .contact-inputs::placeholder {
+    color: #a9a9a9;
+  }
+  
+  .contact-left textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+  }
+  
+  .contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #a363aa, #af35e3);
+    cursor: pointer;
+  }
+  
+  .contact-right img {
+    width: 500px;
+  }
+  
+  /* ==========================================================================
+     Media Queries
+     ========================================================================== */
+  @media only screen and (max-width: 768px) {
+    .bio-photo {
+      float: none;
+      display: block;
+      margin: 0 auto 10px;
+      width: 90%;
+    }
+  
+    /* Center the bio title and change its color */
+    #bio-container h2 {
+      text-align: center;
+      color: #af34e3;
+    }
+  
+    #bio-container {
+      align-items: center;
+    }
+  
+    #collage img {
+      margin-bottom: 0.5rem !important;
+    }
+  
+    /* Adjust padding for collage columns */
+    #collage .col-6 {
+      padding: 0 0.2rem;
+    }
+  
+    .contact-inputs {
+      width: 80vw;
+    }
+  
+    .contact-right {
+      display: none;
+    }
+  
+    .big-gallery {
+      display: none;
+    }
+  
+    .small-gallery {
+      display: block;
+    }
+
+    #bio-p {
+        font-size: 30px;
+        padding: 0 30px 50px;
+        margin-bottom: 40px;
+      }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    main {
+      margin-top: 110px;
+    }
+  
+    .bio-photo {
+      float: none;
+      display: block;
+      margin: 0 auto 10px;
+      width: 95%;
+    }
+  
+    #bio-container {
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: left;
+    }
+  
+    /* Adjust text alignment and padding for bio container */
+    #bio-container h2,
+    #bio-container p {
+      text-align: left;
+      padding: 0 15px;
+    }
+  
+    #bio-container h2 {
+      color: #af34e3;
+    }
+  
+    p {
+      font-size: 25px;
+    }
+
+    #bio-p {
+        font-size: 30px;
+        padding: 0 30px 50px;
+        margin-bottom: 100px;
+      }
+  }
+  
