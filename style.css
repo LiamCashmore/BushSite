@@ -82,7 +82,7 @@
       ========================================================================== */
    .header {
      position: relative;
-     background-image: url('images/BushBackground.png');
+     background-image: url('images/BushBackground.webp');
      background-repeat: no-repeat;
      background-size: cover;
      background-position: center;
