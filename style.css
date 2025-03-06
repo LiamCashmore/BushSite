@@ -490,6 +490,10 @@ footer * {
   .mc-field-group label[for="mce-EMAIL"] {
     padding-left: 15px !important;
   }
+
+  .popup #mc-embedded-subscribe {
+    margin-left: 15px !important;
+  }
    }
    
    /* Tablets: min-width 768px */
