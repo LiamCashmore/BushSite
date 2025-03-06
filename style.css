@@ -486,6 +486,10 @@ footer * {
     padding: 10px;
     font-size: 14px;
   }
+
+  .mc-field-group label[for="mce-EMAIL"] {
+    padding-left: 15px;
+  }
    }
    
    /* Tablets: min-width 768px */
