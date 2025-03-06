@@ -118,7 +118,7 @@
       ========================================================================== */
    .header {
      position: relative;
-     background-image: url('images/BushBackground.webp');
+     background-image: url('images/BushBackground.png');
      background-repeat: no-repeat;
      background-size: cover;
      background-position: center;
