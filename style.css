@@ -488,7 +488,7 @@ footer * {
   }
 
   .mc-field-group label[for="mce-EMAIL"] {
-    padding-left: 15px;
+    padding-left: 15px !important;
   }
    }
    
