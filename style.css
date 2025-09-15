@@ -7,7 +7,9 @@
    /* ==========================================================================
       2. Base Styles
       ========================================================================== */
-   #main-body {
+
+
+    #main-body {
      font-family: Arial, sans-serif;
      line-height: 1.6;
      margin: 0;
@@ -60,8 +62,21 @@
     color: white;
     cursor: pointer;
   }
+
+  .bc-embed {
+    border: 0;
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+  }
    
-   
+
+  .liveRec a {
+    display: block;         /* already true via d-block */
+    max-width: 26ch;        /* tighten wrap width */
+    margin: .5rem auto 0;   /* center it under the iframe */
+    line-height: 1.2;       /* optional: tighter lines */
+  }
    /* ==========================================================================
       3. Navbar Styles
       ========================================================================== */
