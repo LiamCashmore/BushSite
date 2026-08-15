@@ -70,8 +70,7 @@ input:focus,textarea:focus{outline:2px solid #ff4d9d;outline-offset:1px}
 
 /* ---- sections ---- */
 .sec{padding:clamp(56px,9vw,110px) clamp(18px,5vw,64px)}
-.sec--shows{background:linear-gradient(180deg,#06040f 0%,#180c3c 60%,#22104a 100%);
-  border-top:1px solid rgba(255,138,61,.35);box-shadow:0 -1px 34px rgba(255,77,157,.28)}
+.sec--shows{background:linear-gradient(180deg,#06040f 0%,#180c3c 60%,#22104a 100%)}
 .sec--deep{background:linear-gradient(180deg,#22104a 0%,#2d1152 100%)}
 .sec--listen{background:linear-gradient(180deg,#22104a 0%,#2d1152 100%)}
 .sec--photos{background:linear-gradient(180deg,#2d1152 0%,#4a1663 100%)}
@@ -294,13 +293,13 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #ff8a
 /* ---- phones: wordmark ABOVE the band photo ---- */
 @media (max-width:700px){
   body{-webkit-tap-highlight-color:rgba(255,77,157,.25)}
-  .hero{justify-content:flex-start;padding:118px 18px 0;
+  .hero{justify-content:flex-start;padding:118px 0 0;
     background:linear-gradient(180deg,#1a0b3d 0%,#3d1450 42%,#06040f 100%)}
-  .hero__inner{order:1}
-  .hero__photo{order:2;position:relative;inset:auto;width:100%;aspect-ratio:4/5;max-height:62svh;
+  .hero__inner{order:1;padding:0 18px}
+  .hero__photo{order:2;position:relative;inset:auto;width:100%;margin:0;
+    aspect-ratio:4/5;max-height:66svh;
     background-image:url('images/hero-group-sm.jpg');background-size:cover;background-position:center 30%;
-    border:1px solid rgba(255,138,61,.35);border-bottom:none;border-radius:16px 16px 0 0;overflow:hidden;
-    animation:bl-rise 1s .5s ease-out both}
+    border:none;border-radius:0;overflow:hidden;animation:bl-rise 1s .5s ease-out both}
   .hero__photo::after{content:"";position:absolute;inset:0;
     background:linear-gradient(180deg,rgba(6,4,15,.12) 0%,rgba(6,4,15,.05) 55%,rgba(6,4,15,.92) 100%)}
   .hero__scrim,.hero__glow{display:none}
@@ -308,3 +307,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #ff8a
   .wordmark{font-size:clamp(46px,15vw,96px)}
   .hero__tag{font-size:clamp(15px,4.4vw,22px);letter-spacing:.34em}
 }
+
+/* ---- seamless joins: no hard rules between sections ---- */
+.banner{border-bottom:none}
+.sec--shows{position:relative}
+.sec--shows::before{content:"";position:absolute;left:0;right:0;top:-140px;height:140px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(6,4,15,0),#06040f)}
+.hero{margin-bottom:-1px}
