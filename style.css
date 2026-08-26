@@ -807,6 +807,221 @@ h2.mid {
   text-wrap: pretty;
 }
 
+/* Show list ---------------------------------------------------------------- */
+.shows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.show {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(18px, 3vw, 30px);
+  padding: clamp(20px, 3vw, 26px) clamp(20px, 4vw, 32px);
+  border-radius: var(--r-md);
+  border: 1px solid rgba(255, 138, 61, .3);
+  background: rgba(6, 4, 15, .42);
+  box-shadow: 0 0 40px rgba(255, 77, 157, .16);
+  transition: box-shadow .35s ease, border-color .35s ease;
+}
+
+.show:hover {
+  border-color: rgba(255, 138, 61, .65);
+  box-shadow: 0 0 44px rgba(255, 77, 157, .4);
+}
+
+/* Slow light sweep, same as the empty-state card */
+.show::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 32%;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(255, 216, 168, 0),
+    rgba(255, 216, 168, .07),
+    rgba(255, 216, 168, 0));
+  animation: bl-sweep 6s ease-in-out infinite;
+}
+
+/* A show with no ticket link yet — quieter card, ghost button */
+.show--info {
+  border-color: rgba(144, 184, 205, .25);
+  background: rgba(6, 4, 15, .3);
+  box-shadow: none;
+}
+
+.show--info::before { display: none; }
+
+.show--info:hover {
+  border-color: rgba(255, 138, 61, .55);
+  box-shadow: 0 0 34px rgba(255, 77, 157, .22);
+}
+
+.show__date {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 86px;
+  padding-right: clamp(18px, 3vw, 30px);
+  border-right: 1px solid var(--line-blue);
+  font-family: var(--font-display);
+}
+
+.show__mo {
+  font-size: 15px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.show__day {
+  font-size: clamp(40px, 6vw, 56px);
+  line-height: .85;
+  color: #fff;
+}
+
+.show__yr {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: .2em;
+  color: var(--text-faint);
+}
+
+.show__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1 1 220px;
+  min-width: 200px;
+}
+
+.show__venue {
+  font-family: var(--font-display);
+  font-size: clamp(27px, 3.4vw, 38px);
+  line-height: 1.02;
+  color: #fff;
+}
+
+.show__city {
+  font-size: 13px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.show__time {
+  font-size: 14.5px;
+  color: var(--sand);
+}
+
+.show .btn,
+.show .btn--ghost {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.shows__note {
+  font-size: 13.5px;
+  color: var(--text-dimmer);
+}
+
+/* On a phone the three columns can't sit side by side, so the card becomes a
+   single centred stack: date, then venue block, then a full-width tap target. */
+@media (max-width: 700px) {
+  .show {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: clamp(22px, 5.5vw, 28px) clamp(18px, 4.5vw, 26px);
+    text-align: center;
+  }
+
+  /* One date line at one size. Stacked, the month/day/year each had their own
+     type scale and font; in a row that reads as three unrelated bits of text,
+     so here they share everything but colour. */
+  .show__date {
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 9px;
+    width: 100%;
+    min-width: 0;
+    padding: 0 0 14px;
+    border-right: none;
+    border-bottom: 1px solid var(--line-blue);
+    font-size: clamp(23px, 6.4vw, 28px);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  .show__mo,
+  .show__day,
+  .show__yr {
+    font-family: var(--font-display);
+    font-size: inherit;
+    line-height: 1.1;
+    letter-spacing: inherit;
+    color: var(--blue);
+  }
+
+  .show__day {
+    color: #fff;
+  }
+
+  .show__info {
+    align-items: center;
+    gap: 9px;
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .show__venue {
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+
+  .show__city {
+    font-size: 12.5px;
+    letter-spacing: .14em;
+    line-height: 1.5;
+  }
+
+  .show__time {
+    font-size: 15px;
+  }
+
+  .show .btn,
+  .show .btn--ghost {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 3px auto 0;
+    padding: 13px 24px;
+    flex: 0 0 auto;
+    text-align: center;
+  }
+
+  .shows__note {
+    max-width: 38ch;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+}
 
 /* =============================================================================
    11  BUTTONS & PILLS
@@ -1588,7 +1803,9 @@ img[data-fade].is-loaded {
   .hero {
     min-height: 0;
     justify-content: flex-end;
-    padding: calc(var(--nav-h) + 40px) 0 0;
+    /* --nav-h already overshoots the real bar by ~7px on a phone, so this is
+       a hair of breathing room under it rather than a gap. */
+    padding: calc(var(--nav-h) + 6px) 0 0;
     background: var(--ink);
   }
 
